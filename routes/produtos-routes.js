@@ -2,11 +2,11 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/categorias-controller');
+const controller = require('../controllers/produtos-controller');
 
 let _ctrl = new controller();
 
-router.get('/', _ctrl.get);
+router.get('/', _ctrl.get );
 
 router.get('/:id', _ctrl.getById);
 
