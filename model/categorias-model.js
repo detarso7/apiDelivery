@@ -8,7 +8,7 @@ const categoriaModel = new schema({
     descricao: {type: String},
     foto: {type: String, required: true},
     ativa: {type: Boolean},
-    dataCriação: {type: Date, default: Data.now}
+    dataCriação: {type: Date, default: Date.now}
 }, {versionKey: false});
 
 categoriaModel.pre('save', next =>{
@@ -18,4 +18,4 @@ categoriaModel.pre('save', next =>{
     next();
 })
 
-module.exports = mongoose.model('categorias', categoriaModel)
+module.exports = mongoose.model('Categorias', categoriaModel)

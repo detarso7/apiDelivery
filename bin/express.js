@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //Configuração de conecção com o banco de dados
 
-mongoose.connect(variables.Database.connection)
+mongoose.connect(variables.Database.connection, { useNewUrlParser: true });
+
 
 //Configurando as rotas
 app.use('/api/categorias', categoriaRouter);

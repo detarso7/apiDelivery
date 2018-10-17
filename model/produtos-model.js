@@ -9,7 +9,7 @@ const produtosModel = new schema({
     preco:{type: Number},
     foto: {type: String, required: true},
     ativa: {type: Boolean},
-    dataCriação: {type: Date, default: Data.now}
+    dataCriação: {type: Date, default: Date.now}
 }, {versionKey: false})
 
 produtosModel.pre('save', next => {
@@ -19,4 +19,4 @@ produtosModel.pre('save', next => {
     next();
 });
 
-module.exports = mongoose.model('produtos', produtosModel)
+module.exports = mongoose.model('Produtos', produtosModel)
