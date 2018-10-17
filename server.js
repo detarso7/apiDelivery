@@ -1,10 +1,9 @@
-const express = require('express');
-const app = express();
+'use strict'
 
-app.get('/', (req, res)=>{
-    res.status('200').send('Olá mundo')
+const app = require('../api/bin/express')
+const variables = require('../api/bin/configuration/variable')
+
+app.listen(variables.Api.port, () => {
+    console.info(`Servidor levantado na porta ${variables.Api.port}`)
 });
 
-app.listen(3000, ()=>{
-    console.log('O servidor foi iniciado na porta 3000')
-});

@@ -13,6 +13,7 @@
   "author": "Saulo de Tarso <de_tarso7@hotmailcom> (https://saulodetarso.ml/)",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   }
 }
