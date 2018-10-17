@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-const produtosModel = schema({
+const produtosModel = new schema({
     nome:{type: String, required: true, index: true, trim: true},
     descricao: {type: String},
     preco:{type: Number},
