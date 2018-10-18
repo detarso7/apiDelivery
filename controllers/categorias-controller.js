@@ -1,36 +1,33 @@
 'use strict'
 require('../model/categorias-model')
-const mongoose = require('mongoose')
-const categorias = mongoose.model('Categorias')
+const repository = require('../repositories/categorias-repository')
 
 function categoriaController(){
 
 };
 
 categoriaController.prototype.post = async (req, res) => {
-    let model = new categorias(req.body)
-    let resultado = await model.save()
+    let resultado = await new repository().create(req.body)
     res.status(201).send(resultado)
 };
 
 categoriaController.prototype.put = async (req, res) => {
-    await categorias.findByIdAndUpdate(req.params.id, {$set: req.body});
-    let categoriaEncontrada = await categorias.findById(req.params.id);
-    res.status(202).send(categoriaEncontrada)
+    let resultado = await new repository().updata(req.params.id, req.body)
+    res.status(202).send(resultado)
 };
 
 categoriaController.prototype.get = async (req, res) => {
-    let lista = await categorias.find()
+    let lista = await new repository().getAll()
     res.status(200).send(lista)
 };
 
 categoriaController.prototype.getById = async (req, res) => {
-    let categoriaEncontrada = await categorias.findById(req.params.id)
-    res.status(200).send(categoriaEncontrada)
+    let categoria = await new repository().getById(req.params.id)
+    res.status(200).send(categoria)
 };
 
 categoriaController.prototype.delete = async (req, res) => {
-    let deletado = await categorias.findByIdAndRemove(req.params.id)
+    let deletado = await new repository().delete(req.params.id)
     res.status(204).send(deletado)
 };
 
