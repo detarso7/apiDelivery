@@ -1,39 +1,32 @@
 'use strict'
 
 require('../model/categorias-model')
-const mongoose = require('mongoose')
-const categoriasModel = mongoose.model('Categorias')
+const base = require('../bin/base/repository-base')
 
-class CategoriaRepositorio{
-    constructor(){}
+class CategoriaRepository{
+    constructor(){
+        this._base = new base('Categorias')
+    }
 
     async create(data){
-        let categoria = new categoriasModel(data)
-        let resultado = await categoria.save()
-        return resultado
+        return await this._base.create(data)        
     }
 
     async updata(id, data){
-        await categoriasModel.findByIdAndUpdate(id, { $set: data });
-        let resultado = await categoriasModel.findById(id)
-        return resultado
+        return  await this._base.updata(id, data);
     }
 
-
     async getAll(){
-        let lista = await categoriasModel.find()
-        return lista
+        return await this._base.getAll()
     }
 
     async getById(id){
-        let categoriaEncontrada = await categoriasModel.findById(id)
-        return categoriaEncontrada
+        return await this._base.getById(id)
     }
 
     async delete(id){
-        let deletado = await categoriasModel.findByIdAndRemove(id)
-        return deletado
+        return await this._base.delete(id)
     }
 }
 
-module.exports = CategoriaRepositorio;
+module.exports = CategoriaRepository;
