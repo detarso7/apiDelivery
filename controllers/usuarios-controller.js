@@ -64,4 +64,4 @@ usuariosController.prototype.delete = async (req, res) => {
 
 };
 
-module.exports = categoriaController
+module.exports = usuariosController
