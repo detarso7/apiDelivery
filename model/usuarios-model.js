@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema
 
 const usuariosModel = new schema({
-    titulo: {trim: true, index: true, required: true, type: String},
+    nome: {trim: true, index: true, required: true, type: String},
     email: {type: String, required: true},
     senha: {type: String, required: true},
-    foto: {type: String, required: true},
-    ativa: {type: Boolean},
+    foto: {type: String},
+    ativa: {type: Boolean, required: true},
     dataCriação: {type: Date, default: Date.now}
 }, {versionKey: false});
 

@@ -51,16 +51,16 @@ usuariosController.prototype.put = async (req, res) => {
 };
 
 usuariosController.prototype.get = async (req, res) => {
-ctrlBase.get(_repo, _validationContract, req, res)
+ctrlBase.get(_repo, req, res)
 };
 
 usuariosController.prototype.getById = async (req, res) => {
-    ctrlBase.getById(_repo, _validationContract, req, res)
+    ctrlBase.getById(_repo, req, res)
 
 };
 
 usuariosController.prototype.delete = async (req, res) => {
-    ctrlBase.delete(_repo, _validationContract, req, res)
+    ctrlBase.delete(_repo, req, res)
 
 };
 

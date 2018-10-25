@@ -25,7 +25,7 @@ mongoose.set('useCreateIndex', true);
 //Configurando as rotas
 app.use('/api/categorias', categoriaRouter);
 app.use('/api/produtos', produtosRouter);
-app.use('/api/susarios', usuariosRouter);
+app.use('/api/usuarios', usuariosRouter);
 
 
 //Exportando nossa Api
