@@ -3,6 +3,8 @@ const repository = require('../repositories/usuarios-repository')
 const validation = require('../bin/helpers/validation')
 const ctrlBase = require('../bin/base/controller-base')
 const _repo = new repository()
+
+//Autenticação
 const md5 = require('md5')
 const jwt = require('jsonwebtoken')
 const variables = require('../bin/configuration/variable')

@@ -5,10 +5,10 @@ const schema = mongoose.Schema;
 
 const produtosModel = new schema({
     nome:{type: String, required: true, index: true, trim: true},
-    descricao: {type: String},
-    preco:{type: Number},
+    descricao: {type: String, required: true},
+    preco:{type: Number, required: true, default: 0},
     foto: {type: String, required: true},
-    ativa: {type: Boolean},
+    ativa: {type: Boolean, required: true, default: true},
     dataCriação: {type: Date, default: Date.now}
 }, {versionKey: false})
 

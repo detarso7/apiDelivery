@@ -1,3 +1,5 @@
+'use strict'
+
 const jwt = require('jsonwebtoken')
 const variables = require('../bin/configuration/variable')
 

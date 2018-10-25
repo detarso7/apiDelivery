@@ -7,7 +7,7 @@ const categoriaModel = new schema({
     titulo: {trim: true, index: true, required: true, type: String},
     descricao: {type: String},
     foto: {type: String, required: true},
-    ativa: {type: Boolean},
+    ativa: {type: Boolean, default: true},
     dataCriação: {type: Date, default: Date.now}
 }, {versionKey: false});
 
