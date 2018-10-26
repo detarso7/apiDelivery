@@ -29,15 +29,15 @@ categoriaController.prototype.put = async (req, res) => {
 };
 
 categoriaController.prototype.get = async (req, res) => {
-    _repo.getAll(_repo, req, res)
+    ctrlBase.get(_repo, req, res)
 };
 
 categoriaController.prototype.getById = async (req, res) => {
-    _repo.getById(_repo, req, res)
+    ctrlBase.getById(_repo, req, res)
 };
 
 categoriaController.prototype.delete = async (req, res) => {
-    _repo.delete(_repo, req, res)
+    ctrlBase.delete(_repo, req, res)
 };
 
 module.exports = categoriaController
